@@ -2698,11 +2698,11 @@ downloadable fonts to avoid large page reflows where possible.
 <h4 id="font-fetching-requirements" oldids="same-origin-restriction,allowing-cross-origin-font-loading">
 Font fetching requirements</h4>
 
-For font loads, user agents must use the
-<a href="https://fetch.spec.whatwg.org/#fetching">potentially CORS-enabled fetch</a>
-method defined by the [[!HTML]] specification for URL's defined
+For font loads, user agents must
+<a href="https://html.spec.whatwg.org/#create-a-potential-cors-request">create a potential-CORS request</a>,
+as defined by the [[!HTML]] specification for URL's defined
 within @font-face rules. When fetching, user agents must use
-"Anonymous" mode, set the referrer source to the stylesheet's URL and
+"Anonymous" for <em>corsAttributeState</em>, set the referrer source to the stylesheet's URL and
 set the origin to the URL of the containing document.
 
 Note: The implications of this for authors are that fonts
@@ -2711,8 +2711,8 @@ takes steps to permit cross-origin loads. Sites can explicitly allow
 cross-site loading of font data using the <code>Access-Control-Allow-Origin</code>
 HTTP header.  For other schemes, no explicit mechanism to allow
 cross-origin loading, beyond what is permitted by the
-<a href="https://fetch.spec.whatwg.org/#fetching">potentially CORS-enabled fetch</a>
-method, is defined or required.
+<a href="https://html.spec.whatwg.org/#create-a-potential-cors-request">create a potential-CORS request</a>,
+algorithm, is defined or required.
 
 <div class="example">
 	For the examples given below, assume that a document is located at
